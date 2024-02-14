@@ -35,7 +35,7 @@ const CartPage = () => {
           <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
           <div className="lg:col-span-7">
             {cart.items.length === 0 && (
-              <p className="text-neutral-500">No items add to cart.</p>
+              <p className="text-white relative items-center justify-items-center text-3xl">No items add to cart.</p>
             )}
             <ul>
               {cart.items.map((item) => (

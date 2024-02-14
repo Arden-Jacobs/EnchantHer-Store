@@ -81,7 +81,7 @@ export default function AuthForm() {
     return (
           <h1
           >
-            Already entered draw
+            You've enter the draw
           </h1>
     );
   }
