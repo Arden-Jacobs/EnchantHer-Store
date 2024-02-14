@@ -13,6 +13,7 @@ export interface Category {
 }
 
 export interface Product {
+  desc: string | undefined;
   link: string | undefined;
   id: string;
   category: Category;
