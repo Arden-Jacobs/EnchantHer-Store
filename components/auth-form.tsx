@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import AuthModal from "@/components/auth-modal";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { User, createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 
 import { ToastContainer, toast } from "react-toastify";
