@@ -11,9 +11,9 @@ import "react-toastify/dist/ReactToastify.css";
 export default function AuthForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null); // Explicitly set the type
   const [loading, setLoading] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to track modal open/close
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const router = useRouter();
   const supabase = createClientComponentClient();
@@ -27,7 +27,7 @@ export default function AuthForm() {
       setLoading(false);
     }
     getUser();
-  }, []);
+  }, [supabase.auth]);
 
   const handleSignUp = async () => {
     try {
@@ -39,7 +39,6 @@ export default function AuthForm() {
         },
       });
       setUser(res.data.user);
-
       toast.success("Check your email for confirmation link");
       router.refresh();
       setEmail("");
